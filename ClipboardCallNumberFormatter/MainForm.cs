@@ -97,7 +97,11 @@ namespace ClipboardCallNumberFormatter
         /// <param name="e">Event arguments.</param>
         private void OnAlwaysOnTopToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code.
+            // Toggle checked
+            this.alwaysOnTopToolStripMenuItem.Checked = !this.alwaysOnTopToolStripMenuItem.Checked;
+
+            // Toggle topmost
+            this.TopMost = this.alwaysOnTopToolStripMenuItem.Checked;
         }
 
         /// <summary>
