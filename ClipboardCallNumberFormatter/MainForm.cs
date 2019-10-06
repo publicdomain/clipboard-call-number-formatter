@@ -7,6 +7,10 @@ namespace ClipboardCallNumberFormatter
 {
     // Directives
     using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Runtime.InteropServices;
+    using System.Text.RegularExpressions;
     using System.Windows.Forms;
 
     /// <summary>
@@ -15,12 +19,63 @@ namespace ClipboardCallNumberFormatter
     public partial class MainForm : Form
     {
         /// <summary>
+        /// The clipboard update windows message.
+        /// </summary>
+        private const int WmClipboardUpdate = 0x031D;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ClipboardCallNumberFormatter.MainForm"/> class.
         /// </summary>
         public MainForm()
         {
             // The InitializeComponent() call is required for Windows Forms designer support.
             this.InitializeComponent();
+        }
+
+        /// <summary>
+        /// The WndProc.
+        /// </summary>
+        /// <param name="m">The message.</param>
+        protected override void WndProc(ref Message m)
+        {
+            // Test incoming message
+            switch (m.Msg)
+            {
+                // Check for clipboard update
+                case WmClipboardUpdate:
+
+                    // Check for copied text
+                    if (Clipboard.ContainsText())
+                    {
+                        // Match clipboard contents using regular expression
+                        Match match = new Regex(@"\(\d+\)\d+").Match(Clipboard.GetText());
+
+                        // Check for a call number
+                        if (match.Success)
+                        {
+                            // Transform to proper format
+                            string formattedCallNumber = $"00{Regex.Replace(match.Value, "[()]", string.Empty)}";
+
+                            // Display on label
+                            this.callNumberLabel.Text = formattedCallNumber;
+
+                            // Copy formatted call number to clipboard
+                            Clipboard.SetText(formattedCallNumber);
+                        }
+                    }
+
+                    // Halt flow
+                    break;
+
+                // Continue processing
+                default:
+
+                    // Pass message for 
+                    base.WndProc(ref m);
+
+                    // Halt flow
+                    break;
+            }
         }
 
         /// <summary>
