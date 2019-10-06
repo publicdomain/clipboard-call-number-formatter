@@ -121,7 +121,8 @@ namespace ClipboardCallNumberFormatter
         /// <param name="e">Event arguments.</param>
         private void OnExitToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code.
+            // Close program
+            this.Close();
         }
 
         /// <summary>
