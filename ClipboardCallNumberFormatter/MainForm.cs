@@ -30,6 +30,9 @@ namespace ClipboardCallNumberFormatter
         {
             // The InitializeComponent() call is required for Windows Forms designer support.
             this.InitializeComponent();
+
+            // Add clipboard listener
+            AddClipboardFormatListener(this.Handle);
         }
 
         /// <summary>
@@ -77,6 +80,15 @@ namespace ClipboardCallNumberFormatter
                     break;
             }
         }
+
+        /// <summary>
+        /// Adds the clipboard format listener.
+        /// </summary>
+        /// <returns><c>true</c>, if clipboard format listener was added, <c>false</c> otherwise.</returns>
+        /// <param name="hwnd">The handle.</param>
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool AddClipboardFormatListener(IntPtr hwnd);
 
         /// <summary>
         /// Handles the always on top tool strip menu item click event.
