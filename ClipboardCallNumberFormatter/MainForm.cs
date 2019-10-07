@@ -8,6 +8,7 @@ namespace ClipboardCallNumberFormatter
     // Directives
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
     using System.Runtime.InteropServices;
     using System.Text.RegularExpressions;
@@ -148,7 +149,8 @@ namespace ClipboardCallNumberFormatter
         /// <param name="e">Event arguments.</param>
         private void OnHeadquartersPatreoncomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code.
+            // Open Patreon headquarters
+            Process.Start("https://www.patreon.com/publicdomain");
         }
 
         /// <summary>
