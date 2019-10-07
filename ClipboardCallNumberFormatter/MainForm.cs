@@ -70,8 +70,8 @@ namespace ClipboardCallNumberFormatter
                             // Rise call number count
                             this.callNumberCount++;
 
-                            // Display cont on status label
-                            this.mainToolStripStatusLabel.Text = $"Formatted > {this.callNumberCount} < call numbers.";
+                            // Display count on status label
+                            this.mainToolStripStatusLabel.Text = $"Formatted > {this.callNumberCount} < call number{(this.callNumberCount > 1 ? "s" : string.Empty)}.";
 
                             // Copy formatted call number to clipboard
                             Clipboard.SetText(formattedCallNumber);
