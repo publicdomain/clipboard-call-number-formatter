@@ -66,7 +66,7 @@ namespace ClipboardCallNumberFormatter
         }
 
         /// <summary>
-        /// The WndProc.
+        /// The Window procedure.
         /// </summary>
         /// <param name="m">The message.</param>
         protected override void WndProc(ref Message m)
@@ -86,7 +86,7 @@ namespace ClipboardCallNumberFormatter
                         // Check for a call number
                         if (match.Success)
                         {
-                            /*// Transform to proper format
+                            // Transform to proper format
                             string formattedCallNumber = $"00{Regex.Replace(match.Value, "[()]", string.Empty)}";
 
                             // Display on label
@@ -99,7 +99,7 @@ namespace ClipboardCallNumberFormatter
                             this.mainToolStripStatusLabel.Text = $"Formatted > {this.callNumberCount} < call number{(this.callNumberCount > 1 ? "s" : string.Empty)}.";
 
                             // Copy formatted call number to clipboard
-                            Clipboard.SetText(formattedCallNumber);*/
+                            Clipboard.SetText(formattedCallNumber);
                         }
                     }
 
