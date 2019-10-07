@@ -24,6 +24,11 @@ namespace ClipboardCallNumberFormatter
         private const int WmClipboardUpdate = 0x031D;
 
         /// <summary>
+        /// The call number count.
+        /// </summary>
+        private int callNumberCount = 0;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:ClipboardCallNumberFormatter.MainForm"/> class.
         /// </summary>
         public MainForm()
@@ -61,6 +66,12 @@ namespace ClipboardCallNumberFormatter
 
                             // Display on label
                             this.callNumberLabel.Text = formattedCallNumber;
+
+                            // Rise call number count
+                            this.callNumberCount++;
+
+                            // Display cont on status label
+                            this.mainToolStripStatusLabel.Text = $"Formatted > {this.callNumberCount} < call numbers.";
 
                             // Copy formatted call number to clipboard
                             Clipboard.SetText(formattedCallNumber);
@@ -111,7 +122,12 @@ namespace ClipboardCallNumberFormatter
         /// <param name="e">Event arguments.</param>
         private void OnNewToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code.
+            // Reset count
+            this.callNumberCount = 0;
+
+            // Reset labels
+            this.callNumberLabel.Text = "Copy call number";
+            this.mainToolStripStatusLabel.Text = "Monitoring clipboard for call numbers...";
         }
 
         /// <summary>
