@@ -11,6 +11,8 @@ Made for: **u/sindinha**
 
 Original thread: [Software that copy text, changes it, and then paste it](https://www.reddit.com/r/software/comments/dcxn9m/software_that_copy_text_changes_it_and_then_paste/)
 
+Usage video:
+
 [![Clipboard Call Number Formatter v0.1.0](http://img.youtube.com/vi/HE-kCVgMplI/0.jpg)](http://www.youtube.com/watch?v=HE-kCVgMplI "Clipboard Call Number Formatter v0.1.0")
 
 More releases @ our Patreon headquarters: [www.patreon.com/publicdomain](https://www.patreon.com/publicdomain)
