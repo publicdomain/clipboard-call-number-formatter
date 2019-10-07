@@ -149,6 +149,7 @@ namespace ClipboardCallNumberFormatter
         	// 
         	// originalThreadRedditcomToolStripMenuItem
         	// 
+        	this.originalThreadRedditcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadRedditcomToolStripMenuItem.Image")));
         	this.originalThreadRedditcomToolStripMenuItem.Name = "originalThreadRedditcomToolStripMenuItem";
         	this.originalThreadRedditcomToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
         	this.originalThreadRedditcomToolStripMenuItem.Text = "Original thread @ Reddit.com";
