@@ -1,5 +1,5 @@
 # Clipboard Call Number Formatter
-Simple clipboard monitor, changing copied call numbers such as (1)5550888111 to 0015550888111.
+Specific clipboard monitor, changing copied call numbers such as (1)5550888111 to 0015550888111.
 
 "It adds 00 and removes the ( )".
 
