@@ -171,7 +171,8 @@ namespace ClipboardCallNumberFormatter
         /// <param name="e">Event arguments.</param>
         private void OnOriginalThreadRedditcomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code.
+            // Open original thread @ Reddit
+            Process.Start("https://www.reddit.com/r/software/comments/dcxn9m/software_that_copy_text_changes_it_and_then_paste/");
         }
 
         /// <summary>
